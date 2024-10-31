@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FoodDetailActivity">
+
+    <View
+        android:id="@+id/viewYellowBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="700dp"
+        android:background="@color/yellow" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <ImageButton
+        android:id="@+id/imageButtonFavorite"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/favorite"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Detalhe"
+        android:textColor="@color/dark_blue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/imageButtonBack"
+        app:layout_constraintBottom_toBottomOf="@id/imageButtonBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewFood"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@id/textViewQuantity"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@id/imageButtonBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/horizontalBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="412dp"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="viewWhiteBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/viewWhiteBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:background="@drawable/white_bg_top_corner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/viewWhiteBackground"
+        app:layout_constraintTop_toTopOf="@id/viewWhiteBackground"
+        android:text="X-Bacon com queijo Emental" />
+
+    <TextView
+        android:id="@+id/textViewPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toTopOf="@id/viewWhiteBackground"
+        app:layout_constraintEnd_toEndOf="@id/viewWhiteBackground"
+        android:layout_marginEnd="25dp"
+        tools:text="R$ 50,00" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/viewWhiteBackground"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        tools:rating="3.5"
+        android:stepSize="0.1"
+        android:progressTint="@color/dark_yellow"
+        style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator" />
+
+    <TextView
+        android:id="@+id/textViewRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating"
+        app:layout_constraintTop_toTopOf="@id/ratingBar"
+        app:layout_constraintBottom_toBottomOf="@id/ratingBar"
+        app:layout_constraintStart_toEndOf="@id/ratingBar"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/dark_blue" />
+
+    <TextView
+        android:id="@+id/textViewFoodDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dark_blue"
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toStartOf="@id/ratingBar"
+        app:layout_constraintTop_toBottomOf="@id/ratingBar"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Detalhes" />
+
+    <TextView
+        android:id="@+id/textViewFoodContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewFoodDetails"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        app:layout_constraintEnd_toEndOf="@id/viewWhiteBackground"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/dark_blue"
+        android:textSize="14sp"
+        tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged." />
+
+    <ImageView
+        android:id="@+id/imageViewTime"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/time"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewPrice" />
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/dark_blue"
+        android:layout_marginEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewTime"
+        app:layout_constraintTop_toBottomOf="@id/textViewPrice"
+        tools:text="30m" />
+
+    <TextView
+        android:id="@+id/textViewQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="40dp"
+        android:height="35dp"
+        app:layout_constraintTop_toTopOf="@id/viewWhiteBackground"
+        app:layout_constraintBottom_toTopOf="@id/viewWhiteBackground"
+        app:layout_constraintStart_toStartOf="@id/viewWhiteBackground"
+        app:layout_constraintEnd_toEndOf="@id/viewWhiteBackground"
+        android:background="@color/red"
+        android:gravity="center|center_vertical"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="446dp"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/textViewIncrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="40dp"
+        android:layout_marginStart="1dp"
+        android:height="35dp"
+        app:layout_constraintTop_toTopOf="@id/viewWhiteBackground"
+        app:layout_constraintBottom_toTopOf="@id/viewWhiteBackground"
+        android:background="@drawable/red_bg_right_corner"
+        android:gravity="center|center_vertical"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/textViewQuantity" />
+
+    <TextView
+        android:id="@+id/buttonDecrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="40dp"
+        android:height="35dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintTop_toTopOf="@id/viewWhiteBackground"
+        app:layout_constraintBottom_toTopOf="@id/viewWhiteBackground"
+        android:background="@drawable/red_bg_left_corner"
+        android:gravity="center|center_vertical"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/textViewQuantity"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAddToCart"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewFoodContent"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="Adicionar"
+        android:background="@drawable/red_bg_full_corner"
+        android:drawableStart="@drawable/cart"
+        android:drawableTint="@color/white"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+    <TextView
+        android:id="@+id/textViewTotalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/buttonAddToCart"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        android:text="Total"
+        android:textColor="@color/dark_blue"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textViewTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dark_blue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonAddToCart"
+        app:layout_constraintStart_toStartOf="@+id/textViewTotalTitle"
+        android:text="R$ 0,00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
